@@ -1,4 +1,5 @@
-﻿using Book.Data;
+﻿using Book.Classes;
+using Book.Data;
 using Book.Models;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,24 @@ namespace Book.ViewModels
         }
 
         public abstract void LoadDocument();
+
+
+        public List<Consumo> Consumo { get; set; }
+
+        private bool _visible = false;
+        public bool Visible
+        {
+            get
+            {
+                return _visible;
+            }
+
+            set
+            {
+                _visible = value;
+                OnPropertyChanged("Visible");
+            }
+        }
 
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -94,6 +94,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Classes\Consuma.cs" />
     <Compile Include="Classes\DocxReader.cs" />
     <Compile Include="Classes\DocxToFlowDocumentConverter.cs" />
     <Compile Include="Data\BaseData.cs" />

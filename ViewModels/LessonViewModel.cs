@@ -1,4 +1,5 @@
-﻿using Book.Data;
+﻿using Book.Classes;
+using Book.Data;
 using Book.Models;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,15 +23,26 @@ namespace Book.ViewModels
             }
         }
 
+        public string Title { get; set; }
+        public string Number { get; set; }
+
         public LessonViewModel()
         {
             Data = new LessonData();
             Items = Data.GetItems();
+            Consumo = new List<Consumo>();
         }
 
         public override void LoadDocument()
         {
+            Visible = true;
+            Consumo.Add(new Consumo(SelectedItem.Title, 100));
             Document = Data.GetDocument(SelectedItem.Path);
+            Title = SelectedItem.Title;
+            Number = SelectedItem.Number;
         }
+
+
     }
+
 }
