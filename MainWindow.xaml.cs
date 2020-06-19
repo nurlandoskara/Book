@@ -25,7 +25,8 @@ namespace Book
         public MainWindow()
         {
             InitializeComponent();
-
+            var window = new StartPage();
+            transitioningControl.Content = window;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -46,6 +47,12 @@ namespace Book
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var window = new Videos();
+            transitioningControl.Content = window;
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var window = new StartPage();
             transitioningControl.Content = window;
         }
     }

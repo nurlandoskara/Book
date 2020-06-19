@@ -90,9 +90,9 @@
 
     <Grid>
         <Grid Background="#FFCFCFCF" Visibility="{Binding Path=ListVisible, Converter={StaticResource BoolToVisConverter} }">
-            <ScrollViewer>
+            <ScrollViewer VerticalScrollBarVisibility="Visible">
                 <Grid>
-                    <MetroChart:FadingListView ItemsSource="{Binding Items}" x:Name="ListView">
+                    <MetroChart:FadingListView ItemsSource="{Binding Items}" Background="WhiteSmoke" x:Name="ListView" ScrollViewer.VerticalScrollBarVisibility="Visible">
                         <MetroChart:FadingListView.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel/>
