@@ -29,6 +29,7 @@ namespace Book.ViewModels
         {
             int id = (int)obj;
             SelectedItem = Items.FirstOrDefault(x => x.Id == id);
+            ListVisible = false;
             LoadDocument();
         }
 
@@ -50,6 +51,27 @@ namespace Book.ViewModels
                 _visible = value;
                 OnPropertyChanged("Visible");
             }
+        }
+
+        private bool _listVisible = false;
+        public bool ListVisible
+        {
+            get
+            {
+                return _listVisible;
+            }
+
+            set
+            {
+                _listVisible = value;
+                Visible = value != true;
+                OnPropertyChanged("ListVisible");
+            }
+        }
+
+        public BaseViewModel()
+        {
+            ListVisible = true;
         }
 
 

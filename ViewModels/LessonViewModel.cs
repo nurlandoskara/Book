@@ -35,7 +35,6 @@ namespace Book.ViewModels
 
         public override void LoadDocument()
         {
-            Visible = true;
             Consumo.Add(new Consumo(SelectedItem.Title, 100));
             Document = Data.GetDocument(SelectedItem.Path);
             Title = SelectedItem.Title;
