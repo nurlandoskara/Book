@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Book
+namespace Book.Models
 {
-    public interface IView
+    public class Video : BaseModel
     {
-        void ItemLoad(string path);
-        void ItemUnload();
     }
 }

@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using Book.Models;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,11 @@ namespace Book
             DragMove();
         }
 
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var window = new Videos();
+            transitioningControl.Content = window;
+        }
     }
 
 

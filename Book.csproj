@@ -98,8 +98,13 @@
     <Compile Include="Classes\DocxReader.cs" />
     <Compile Include="Classes\DocxToFlowDocumentConverter.cs" />
     <Compile Include="Data\BaseData.cs" />
+    <Compile Include="Data\VideoData.cs" />
     <Compile Include="Data\LessonData.cs" />
     <Compile Include="IView.cs" />
+    <Compile Include="Models\Video.cs" />
+    <Compile Include="Videos.xaml.cs">
+      <DependentUpon>Videos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lessons.xaml.cs">
       <DependentUpon>Lessons.xaml</DependentUpon>
     </Compile>
@@ -107,6 +112,7 @@
     <Compile Include="Models\Lesson.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\VideoViewModel.cs" />
     <Compile Include="ViewModels\LessonViewModel.cs" />
     <Compile Include="Views\Browser.xaml.cs">
       <DependentUpon>Browser.xaml</DependentUpon>
@@ -124,6 +130,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Videos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Lessons.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -130,7 +130,7 @@
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
+                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Button_Click_1">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="ВИДЕОЛАР" FontFamily="Champagne &amp; Limousines"/>
@@ -143,21 +143,7 @@
                         <TextBlock HorizontalAlignment="Center" Text="ТЕСТТАР" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
-
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
-                    <Grid Width="150">
-                        <materialDesign:PackIcon Kind="TshirtCrew" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text=" " FontFamily="Champagne &amp; Limousines"/>
-                    </Grid>
-                </Button>
-
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
-                    <Grid Width="150">
-                        <materialDesign:PackIcon Kind="TruckDelivery" VerticalAlignment="Center"/>
-                        <TextBlock HorizontalAlignment="Center" Text=" " FontFamily="Champagne &amp; Limousines"/>
-                    </Grid>
-                </Button>
-
+                
                 <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center"/>

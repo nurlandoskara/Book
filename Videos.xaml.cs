@@ -20,28 +20,26 @@ namespace Book
     /// <summary>
     /// Interação lógica para MainWindow.xam
     /// </summary>
-    public partial class Lessons : ContentControl, IView
+    public partial class Videos : ContentControl, IView
     {
-        public Lessons()
+        public Videos()
         {
             InitializeComponent();
-            var vm = new LessonViewModel();
+            var vm = new VideoViewModel();
             vm.View = this;
             DataContext = vm;
         }
 
         public void ItemLoad(string path)
         {
-            TextRange doc = new TextRange(DocumentReader.Document.ContentStart, DocumentReader.Document.ContentEnd);
-            using (FileStream fs = new FileStream(path, FileMode.Open))
-            {
-                doc.Load(fs, DataFormats.Rtf);
-            }
+            VideoPlayer.Source = new Uri(path);
+            VideoPlayer.Play();
         }
 
         public void ItemUnload()
         {
-            DocumentReader.Document = null;
+            VideoPlayer.Stop();
+            VideoPlayer.Source = null;
         }
     }
 }

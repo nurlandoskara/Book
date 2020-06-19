@@ -1,13 +1,9 @@
 ﻿using Book.Classes;
-using Book.Data;
 using Book.Models;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Book.ViewModels
 {
@@ -36,6 +32,7 @@ namespace Book.ViewModels
         public abstract void LoadDocument();
 
 
+        public IView View { get; set; }
         public List<Consumo> Consumo { get; set; }
 
         private bool _visible = false;
@@ -54,6 +51,9 @@ namespace Book.ViewModels
         }
 
         private bool _listVisible = false;
+        private string _title;
+        private string _number;
+
         public bool ListVisible
         {
             get
@@ -66,6 +66,27 @@ namespace Book.ViewModels
                 _listVisible = value;
                 Visible = value != true;
                 OnPropertyChanged("ListVisible");
+            }
+        }
+
+
+        public string Title
+        {
+            get => _title;
+            set
+            {
+                _title = value;
+                OnPropertyChanged("Title");
+            }
+        }
+
+        public string Number
+        {
+            get => _number;
+            set
+            {
+                _number = value;
+                OnPropertyChanged("Number");
             }
         }
 
