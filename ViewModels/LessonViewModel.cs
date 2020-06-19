@@ -11,7 +11,10 @@ namespace Book.ViewModels
 {
     public class LessonViewModel : BaseViewModel<Lesson, LessonData>
     {
-        
+        private string title;
+        private string _title;
+        private string _number;
+
         private FlowDocument _document { get; set; }
         public FlowDocument Document
         {
@@ -23,8 +26,24 @@ namespace Book.ViewModels
             }
         }
 
-        public string Title { get; set; }
-        public string Number { get; set; }
+        public string Title { 
+            get => _title; 
+            set
+            {
+                _title = value;
+                OnPropertyChanged("Title");
+            }
+        }
+
+        public string Number
+        {
+            get => _number;
+            set
+            {
+                _number = value;
+                OnPropertyChanged("Number");
+            }
+        }
 
         public LessonViewModel()
         {
