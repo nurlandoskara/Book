@@ -1,6 +1,7 @@
 ﻿using Book.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +20,23 @@ namespace Book
     /// <summary>
     /// Interação lógica para MainWindow.xam
     /// </summary>
-    public partial class Lessons : ContentControl
+    public partial class Lessons : ContentControl, IView
     {
         public Lessons()
         {
             InitializeComponent();
-            DataContext = new LessonViewModel();
+            var vm = new LessonViewModel();
+            vm.View = this as IView;
+            DataContext = vm;
+        }
+
+        public void RTFDocumentLoad(string path)
+        {
+            TextRange doc = new TextRange(DocumentReader.Document.ContentStart, DocumentReader.Document.ContentEnd);
+            using (FileStream fs = new FileStream(path, FileMode.Open))
+            {
+                doc.Load(fs, DataFormats.Rtf);
+            }
         }
     }
 }

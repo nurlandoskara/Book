@@ -155,8 +155,9 @@
                 </StackPanel>
             </Grid>
             <Grid Margin="50 20 50 150">
-                <FlowDocumentPageViewer Name="DocumentReader" Document="{Binding Document}">
-                </FlowDocumentPageViewer>
+                <RichTextBox Name="DocumentReader"  Background="Wheat" Padding="20" ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                        ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                </RichTextBox>
             </Grid>
         </Grid>
     </Grid>

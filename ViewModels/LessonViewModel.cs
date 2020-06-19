@@ -3,8 +3,11 @@ using Book.Data;
 using Book.Models;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Documents;
 
 namespace Book.ViewModels
@@ -52,12 +55,12 @@ namespace Book.ViewModels
             Consumo = new List<Consumo>();
         }
 
+        public IView View { get; set; }
         public override void LoadDocument()
         {
-            Consumo.Add(new Consumo(SelectedItem.Title, 100));
-            Document = Data.GetDocument(SelectedItem.Path);
             Title = SelectedItem.Title;
             Number = SelectedItem.Number;
+            View.RTFDocumentLoad(SelectedItem.Path);
         }
 
 
