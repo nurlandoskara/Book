@@ -1,4 +1,5 @@
 ﻿using Book.Models;
+using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,19 +16,24 @@ namespace Book.Data
         public override List<Lesson> GetItems()
         {
             var list = new List<Lesson>();
-            int i = 0;
             foreach (var file in Directory.GetFiles(CurrentDirectory, "*.rtf"))
             {
                 var fileName = Path.GetFileNameWithoutExtension(file);
+
+                var title = fileName.Substring(fileName.IndexOf("_") + 1, fileName.Length - fileName.IndexOf("_") - 1);
+                var path = file;
+                var number = fileName.Substring(0, fileName.IndexOf("_"));
+                var id = Convert.ToInt32(number.Substring(0,2));
+                
                 list.Add(new Lesson
                 {
-                    Title = fileName.Substring(3, fileName.Length - 3),
-                    Id = ++i,
-                    Path = file,
-                    Number = fileName.Substring(0, 2)
-                });
+                    Title = title,
+                    Path = path,
+                    Number = number,
+                    Id = id
+                }); 
             }
-            return list;
+            return list.OrderBy(x => x.Id).ToList();
         }
     }
 }

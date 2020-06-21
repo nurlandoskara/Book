@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Controls;
 
-namespace Book
+namespace Book.Views
 {
     /// <summary>
     /// Interação lógica para MainWindow.xam

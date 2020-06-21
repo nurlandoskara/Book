@@ -1,31 +1,36 @@
 ﻿using Book.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Book.Views
 {
     /// <summary>
-    /// Interaction logic for Lessons.xaml
+    /// Interação lógica para MainWindow.xam
     /// </summary>
-    public partial class Lessons : Window
+    public partial class Lessons : ContentControl, IView
     {
         public Lessons()
         {
             InitializeComponent();
-            DataContext = new LessonViewModel();
+            var vm = new LessonViewModel();
+            vm.View = this;
+            DataContext = vm;
         }
 
+        public void ItemLoad(string path)
+        {
+            TextRange doc = new TextRange(DocumentReader.Document.ContentStart, DocumentReader.Document.ContentEnd);
+            using (FileStream fs = new FileStream(path, FileMode.Open))
+            {
+                doc.Load(fs, DataFormats.Rtf);
+            }
+        }
+
+        public void ItemUnload()
+        {
+            DocumentReader.Document = null;
+        }
     }
 }
