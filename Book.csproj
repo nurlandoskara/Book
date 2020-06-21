@@ -98,13 +98,19 @@
     <Compile Include="Classes\DocxReader.cs" />
     <Compile Include="Classes\DocxToFlowDocumentConverter.cs" />
     <Compile Include="Data\BaseData.cs" />
+    <Compile Include="Data\PresentationData.cs" />
     <Compile Include="Data\VideoData.cs" />
     <Compile Include="Data\LessonData.cs" />
     <Compile Include="Interfaces\IView.cs" />
+    <Compile Include="Models\Presentation.cs" />
+    <Compile Include="ViewModels\PresentationViewModel.cs" />
     <Compile Include="Views\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Video.cs" />
+    <Compile Include="Views\Presentations.xaml.cs">
+      <DependentUpon>Presentations.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Videos.xaml.cs">
       <DependentUpon>Videos.xaml</DependentUpon>
     </Compile>
@@ -125,6 +131,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\StartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Presentations.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

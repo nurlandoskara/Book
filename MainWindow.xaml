@@ -101,6 +101,10 @@
 
         <Grid Grid.Column="1" Grid.Row="1" Background="#FFCFCFCF">
             <mah:TransitioningContentControl x:Name="transitioningControl" Transition="Left" />
+
+            <RichTextBox Name="DocumentReader" Visibility="Hidden" Background="Wheat" Padding="20" ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                        ScrollViewer.HorizontalScrollBarVisibility="Visible">
+            </RichTextBox>
         </Grid>
 
         <Grid Grid.Row="1">
@@ -126,7 +130,7 @@
             </Grid>
 
             <StackPanel Grid.Row="1">
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
+                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Button_Click_3">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Calendar" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="ҰМЖ" FontFamily="Champagne &amp; Limousines"/>
@@ -139,7 +143,7 @@
                         <TextBlock HorizontalAlignment="Center" Text="ҚМЖ" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
+                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="Button_Click_2">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Presentation" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="ПРЕЗЕНТАЦИЯЛАР" FontFamily="Champagne &amp; Limousines"/>

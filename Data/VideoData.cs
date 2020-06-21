@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Book.Data
 {
@@ -15,14 +12,13 @@ namespace Book.Data
         public override List<Video> GetItems()
         {
             var list = new List<Video>();
-            int i = 0;
             foreach (var file in Directory.GetFiles(CurrentDirectory))
             {
                 var fileName = Path.GetFileNameWithoutExtension(file);
                 list.Add(new Video
                 {
                     Title = fileName.Substring(3, fileName.Length - 3),
-                    Id = ++i,
+                    Id = Convert.ToInt32(fileName.Substring(0, 2)),
                     Path = file,
                     Number = fileName.Substring(0, 2)
                 });
