@@ -10,21 +10,28 @@ namespace Book.Views
     /// <summary>
     /// Interação lógica para MainWindow.xam
     /// </summary>
-    public partial class TestPage : ContentControl
+    public partial class TestPage : ContentControl, IView
     {
         public TestPage()
         {
             InitializeComponent();
-            DataContext = new TestViewModel();
+            var vm = new TestViewModel();
+            vm.View = this;
+            DataContext = vm;
         }
 
-        public void Finish()
+        public void Finish(TestResult result)
         {
-
         }
 
+        public void ItemLoad(string path)
+        {
+            throw new System.NotImplementedException();
+        }
 
-        
-
+        public void ItemUnload()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

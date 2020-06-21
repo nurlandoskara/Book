@@ -1,4 +1,5 @@
-﻿using Book.ViewModels;
+﻿using Book.Models;
+using Book.ViewModels;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,6 +18,11 @@ namespace Book.Views
             var vm = new LessonViewModel();
             vm.View = this;
             DataContext = vm;
+        }
+
+        public void Finish(TestResult result)
+        {
+            throw new System.NotImplementedException();
         }
 
         public void ItemLoad(string path)

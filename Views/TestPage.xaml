@@ -98,7 +98,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <TextBlock Text="{Binding Question}"></TextBlock>
+                            <TextBlock Text="{Binding Question}" Background="WhiteSmoke"></TextBlock>
                             <ListView ItemsSource="{Binding Answers}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
@@ -143,7 +143,7 @@
                     <MetroChart:RadialGaugeChart.Series>
                         <MetroChart:ChartSeries
                                         DisplayMember="Titulo"
-                                        ItemsSource="{Binding Path=Consumo}"
+                                        ItemsSource="{Binding Path=TestResult}"
                                         SeriesTitle="Consumo"
                                         ValueMember="Porcentagem" HorizontalAlignment="Center"/>
                     </MetroChart:RadialGaugeChart.Series>
