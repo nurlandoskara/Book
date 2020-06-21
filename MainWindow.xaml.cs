@@ -1,4 +1,5 @@
-﻿using Book.Views;
+﻿using Book.Models;
+using Book.Views;
 using MahApps.Metro.Controls;
 using System.IO;
 using System.Windows;
@@ -66,6 +67,13 @@ namespace Book
             {
                 doc.Load(fs, DataFormats.Rtf);
             }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            DocumentReader.Visibility = Visibility.Hidden;
+            var window = new TestPage();
+            transitioningControl.Content = window;
         }
     }
 

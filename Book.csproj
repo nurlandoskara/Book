@@ -55,6 +55,9 @@
     <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
       <HintPath>packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
+    <Reference Include="GemBox.Document, Version=31.0.0.1197, Culture=neutral, PublicKeyToken=b1b72c69714d4847, processorArchitecture=MSIL">
+      <HintPath>packages\GemBox.Document.31.0.1197\lib\net35\GemBox.Document.dll</HintPath>
+    </Reference>
     <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
       <HintPath>packages\MahApps.Metro.2.0.1\lib\net47\MahApps.Metro.dll</HintPath>
     </Reference>
@@ -99,11 +102,19 @@
     <Compile Include="Classes\DocxToFlowDocumentConverter.cs" />
     <Compile Include="Data\BaseData.cs" />
     <Compile Include="Data\PresentationData.cs" />
+    <Compile Include="Data\TestData.cs" />
     <Compile Include="Data\VideoData.cs" />
     <Compile Include="Data\LessonData.cs" />
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Models\Presentation.cs" />
+    <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\Test.cs" />
+    <Compile Include="Models\TestResult.cs" />
     <Compile Include="ViewModels\PresentationViewModel.cs" />
+    <Compile Include="ViewModels\TestViewModel.cs" />
+    <Compile Include="Views\TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
@@ -130,6 +141,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\TestPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\StartPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
